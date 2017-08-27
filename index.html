@@ -7,117 +7,64 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="btn">ボタンだよ</div>
-  
-  <div id="btn1">ボタン1だよ</div>
-  <div id="btn2">ボタン2だよ</div>
-  <!-- <div id="result">おみくじの結果を表示</div> -->
+  <button id="g">グー</button>
+  <!-- <div id="result1"></div> -->
+  <button id="c">チョキ</button>
+  <!-- <div id="result2"></div> -->
+  <button id="p">パー</button>
+  <button id="reload">もう一回勝負</button>
+  <div id="result1"></div>
+   <!-- <div id="result">おみくじの結果を表示</div> -->
   <script>
-  // console.log('初めてのjavascript')
-  // console.log(23 * 5);
-  // console.log(2000 / 1800);
-  // console.log(18 % 5);
+  var g = document.getElementById('g');
+  var c = document.getElementById('c');
+  var p = document.getElementById('p');
+  var rand = Math.floor(Math.random() * 3);
+  var gg = '<img src="img/janken_gu.png">';
+  var cc = '<img src="img/janken_choki.png">';
+  var pp = '<img src="img/janken_pa.png">';
+  var result1 = document.getElementById('result1');
+  var result2 = document.getElementById('result2');
+  var result3 = document.getElementById('result3');
+  var reload = document.getElementById('reload');
 
-  // var name = '木村'
-  // console.log(name);
-  // console.log('name');
+  // ぐーボタンを押した場合
+  g.addEventListener('click', function(){
+    if(rand == 0){
+      result1.innerHTML = gg + '<p>アイコです</p>';
+    }else if(rand == 1){
+      result1.innerHTML = cc + '<p>あなたの勝ちです</p>';
+    }else if(rand == 2){
+      result1.innerHTML = pp + '<p>あなたの負けです</p>';
+    };
+  });
 
-  // var point = 89;
-  // if(point >= 80 && point <= 90){
-  //   console.log('素晴らしい！おめでとう');
-  // }else{
-  //   console.log('もっと頑張りましょう');
-  // };
-
-  // var random = Math.floor(Math.random() * 5);
-  // console.log(random);
-  // if(random == 4){
-  //   console.log('ざんねん');
-  // }else if(random == 4){
-  //   console.log('いまいち');
-  // }else if(random == 2){
-  //   console.log('ふつう');
-  // }else if(random == 1){
-  //   console.log('すごいね');
-  // }else{
-  //   console.log('すごい');
-  // };
-  //
-  // var array = ['a', 'b', 'c'];
-  // console.log(array);
-
-  // var fruit = ['ぶどう', 'りんご', 'ばなな', 'さくらんぼ', 'めろん', 'おれんじ'];
-  // console.log(fruit);
-  // fruit.push('ぱいなっぷる');
-  // console.log(fruit);
-
-  // var i = 0;
-  // for(i = 0; i < 50; i++){
-  //   console.log(i);
-  // }
-
-  // var i = 0;
-  // for(i = 0; i < 50; i++){
-  //   console.log(i);
-  // }
-
-  // if(random == 4){
-  //   console.log('大吉');
-  // }else if(random == 4){
-  //   console.log('中吉');
-  // }else if(random == 2){
-  //   console.log('小吉');
-  // }else if(random == 1){
-  //   console.log('吉');
-  // }else{
-  //   console.log('凶');
-  // };
-
- // var array = ['変更したよ', '<h1>初めてのjavascript</h1>', '<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/p-kaneko/cabinet/shohin02/ca0136-01.jpg">']
- //
- //  var btn = document.getElementById('btn');
- //  var btn1 = document.getElementById('btn1');
- //  var btn2 = document.getElementById('btn2');
- //
- //  btn.addEventListener('click', function(){
- //    btn.innerHTML = array[0];
- //  });
- //
- //  btn1.addEventListener('click', function(){
- //    btn1.innerHTML = array[1];
- //  });
- //
- //  btn2.addEventListener('click', function(){
- //    btn2.innerHTML = array[2];
- //  });
+  // チョキボタンを押した場合
+  c.addEventListener('click', function(){
+    if(rand == 0){
+      result1.innerHTML = gg + '<p>あなたの負けです</p>';
+    }else if(rand == 1){
+      result1.innerHTML = cc + '<p>アイコです</p>';
+    }else if(rand == 2){
+      result1.innerHTML = pp + '<p>あなたの勝ちです</p>';
+    };
+  });
 
 
-  // btn.addEventListener('click', function(){
-  //   btn.innerHTML = '変更したよ';
-  // });
-  //
-  // btn1.addEventListener('click', function(){
-  //   btn1.innerHTML = '<h1>初めてのjavascript</h1>';
-  // });
-  //
-  // btn2.addEventListener('click', function(){
-  //   btn2.innerHTML = '<img src="https://thumbnail.image.rakuten.co.jp/@0_mall/p-kaneko/cabinet/shohin02/ca0136-01.jpg">';
-  // });
+  // パーボタンを押した場合
+  p.addEventListener('click', function(){
+    if(rand == 0){
+      result1.innerHTML = gg + '<p>あなたの勝ちです</p>';
+    }else if(rand == 1){
+      result1.innerHTML = cc + '<p>あなたの負けです</p>';
+    }else if(rand == 2){
+      result1.innerHTML = pp + '<p>アイコです</p>';
+    };
+  });
 
-  // var omikuji = ['大吉', '中吉', '小吉', '吉', '凶']
-  // var result = document.querySelector('#result');
-  // var btn = document.querySelector('#btn');
-  // btn.onclick = function(e){
-  //   var random = Math.floor(Math.random() * 5);
-  //   result.innerHTML = omikuji[random];
-  // };
-
-
-  var omikuji = ['大吉', '中吉', '小吉', '吉', '凶',];
-  var btn = document.getElementById('btn');
-  btn.addEventListener('click', function(){
-    var rand = Math.floor(Math.random() * 5);
-    btn.innerHTML = omikuji[rand];
+  // 画面のリロード
+  reload.addEventListener('click', function(){
+    location.reload();
   })
   </script>
 </body>
