@@ -2,7 +2,7 @@ enchant();
 
 window.onload = function(){
   var core = new Core(640, 640);
-  core.preload('hipman.png', 'enemy.png', 'back.png', 'he.png', 'gameover.png');
+  core.preload('hipman.png', 'enemy.png', 'back.png', 'he.png', 'gameover.png', 'gameclear.png');
   core.scale = 1;
   core.onload = function(){
     //背景画像の表示
@@ -81,6 +81,10 @@ window.onload = function(){
       });
     }).delay(15).loop();
 
+    // var countup = function(){
+    //   core.pushScene(gameClearScene);
+    // }
+
     //経過時間を表示
     core.rootScene.addChild(label);
 
@@ -88,9 +92,15 @@ window.onload = function(){
     var gameOverScene = new Scene();
     gameOverScene.backgroundColor = 'black';
     var gameover = new Sprite(640, 640);
-    gameover.image = core.assets['gameover.png']
+    gameover.image = core.assets['gameover.png'];
     gameOverScene.addChild(gameover)
 
+    //crlearのシーン
+    var gameClearScene = new Scene();
+    gameClearScene.backgroundColor = 'black';
+    var gameclear = new Sprite(640, 640);
+    gameclear.image = core.assets['gameclear.png'];
+    gameClearScene.addChild(gameclear);
   }
   core.start();
 };
